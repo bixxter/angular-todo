@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700&display=swap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+}
+
+.btn {
+  cursor: pointer;
+}

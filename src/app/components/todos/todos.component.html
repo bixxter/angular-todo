@@ -1,0 +1,52 @@
+<div class="todo-list">
+  <div class="todo-list__header">
+    <span class="todo-list__date">
+      {{ getDate }}
+    </span>
+    <h1 class="todo-list__title">
+      You have {{ notDoneTodos.length }} things todo:
+    </h1>
+  </div>
+  <div class="add-todo todo-list__item">
+    <input
+      type="text"
+      class="add-todo__input"
+      placeholder="Add todo"
+      [(ngModel)]="todoText"
+      (keyup.enter)="addTodo()"
+    />
+  </div>
+  <div
+    class="todo-list__item"
+    *ngFor="let todo of sortedTodos; let i = index"
+    (click)="toggleTodo(todo.id)"
+  >
+    <div
+      class="todo-list__status"
+      [class.todo-list__status--done]="!todo.done"
+    ></div>
+    <div class="todo-list__text" [class.todo-list__text--done]="todo.done">
+      {{ todo.text }}
+    </div>
+    <div class="todo-list__actions">
+      <button class="todo-list__btn btn" (click)="deleteTodo(todo.id)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-hidden="true"
+          role="img"
+          class="iconify iconify--mdi"
+          width="32"
+          height="32"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

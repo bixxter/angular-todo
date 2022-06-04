@@ -1,0 +1,49 @@
+.app {
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.header {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-size: 200% 200%;
+  animation: gradientBG 5s ease infinite;
+  background: linear-gradient(to right, #f6d365 0%, #fda085 50%, #f6d365 100%);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
